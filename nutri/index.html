@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NutriEduca - I.E. Nuestra Señora del Rosario</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-content">
+      <a href="#inicio" class="logo">
+        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=50" alt="NutriEduca logo" class="logo-img" />
+        NutriEduca
+      </a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="primary-navigation">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#recetas">Recetas</a></li>
+        <li><a href="#comparacion">Comparación</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#historias">Historias</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="inicio" class="hero" role="banner">
+    <div class="hero-content">
+      <h1>Fortalecer la educación alimentaria</h1>
+      <p>Reeducando los hábitos de consumo de comida rápida en los estudiantes de la I.E. Nuestra Señora del Rosario</p>
+      <div class="hero-buttons">
+        <a href="#recetas" class="btn btn-primary">Ver recetas saludables</a>
+        <a href="#recursos" class="btn btn-secondary">Recursos educativos</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="recetas" class="recipes-section" aria-labelledby="recetas-heading">
+      <h2 id="recetas-heading">Recetas Saludables</h2>
+      <div class="recipe-grid">
+        <article class="recipe-card" tabindex="0">
+          <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Wrap de Pollo y Vegetales" />
+          <div class="recipe-content">
+            <h3>Wrap de Pollo y Vegetales</h3>
+            <p>Una alternativa saludable a los wraps de comida rápida.</p>
+            <span class="time" aria-label="Tiempo de preparación">20 min</span>
+            <button class="btn-recipe" type="button">Ver receta</button>
+          </div>
+        </article>
+        <article class="recipe-card" tabindex="0">
+          <img src="https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Pizza Integral Casera" />
+          <div class="recipe-content">
+            <h3>Pizza Integral Casera</h3>
+            <p>Pizza saludable con masa integral y vegetales frescos.</p>
+            <span class="time" aria-label="Tiempo de preparación">45 min</span>
+            <button class="btn-recipe" type="button">Ver receta</button>
+          </div>
+        </article>
+        <article class="recipe-card" tabindex="0">
+          <img src="/img/letejas.jpg" alt="Hamburguesa de Lentejas" />
+          <div class="recipe-content">
+            <h3>Hamburguesa de Lentejas</h3>
+            <p>Deliciosa hamburguesa vegetariana rica en proteínas.</p>
+            <span class="time" aria-label="Tiempo de preparación">30 min</span>
+            <button class="btn-recipe" type="button">Ver receta</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="comparacion" class="comparison-section" aria-labelledby="comparacion-heading">
+      <h2 id="comparacion-heading">Comparación Nutricional</h2>
+      <div class="comparison-grid">
+        <div class="comparison-card" role="region" aria-label="Comida rápida">
+          <h3>Comida Rápida</h3>
+          <div class="nutrition-info">
+            <div class="nutrient">
+              <span class="value">650</span>
+              <span class="label">Calorías</span>
+            </div>
+            <div class="nutrient">
+              <span class="value">35g</span>
+              <span class="label">Grasas</span>
+            </div>
+            <div class="nutrient">
+              <span class="value">980mg</span>
+              <span class="label">Sodio</span>
+            </div>
+          </div>
+        </div>
+        <div class="comparison-card healthy" role="region" aria-label="Alternativa saludable">
+          <h3>Alternativa Saludable</h3>
+          <div class="nutrition-info">
+            <div class="nutrient">
+              <span class="value">320</span>
+              <span class="label">Calorías</span>
+            </div>
+            <div class="nutrient">
+              <span class="value">8g</span>
+              <span class="label">Grasas</span>
+            </div>
+            <div class="nutrient">
+              <span class="value">280mg</span>
+              <span class="label">Sodio</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recursos" class="resources-section" aria-labelledby="recursos-heading">
+      <h2 id="recursos-heading">Recursos Educativos</h2>
+      <div class="resources-grid">
+        <div class="resource-card" role="region" aria-label="Guía de Nutrición">
+          <div class="icon" aria-hidden="true">📚</div>
+          <h3>Guía de Nutrición</h3>
+          <p>Aprende los fundamentos de una alimentación saludable.</p>
+          <a href="#" class="btn-download" role="button">Descargar PDF</a>
+        </div>
+        <div class="resource-card" role="region" aria-label="Infografías">
+          <div class="icon" aria-hidden="true">📊</div>
+          <h3>Infografías</h3>
+          <p>Información nutricional en formato visual.</p>
+          <a href="#" class="btn-download" role="button">Ver infografías</a>
+        </div>
+        <div class="resource-card" role="region" aria-label="Videos Educativos">
+          <div class="icon" aria-hidden="true">🎥</div>
+          <h3>Videos Educativos</h3>
+          <p>Tutoriales y consejos en formato video.</p>
+          <a href="#" class="btn-download" role="button" id="openVideoBtn">Ver videos</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="historias" class="stories-section" aria-labelledby="historias-heading">
+      <h2 id="historias-heading">Historias de Éxito</h2>
+      <div class="stories-slider" role="list" aria-live="polite">
+        <article class="story-card active" role="listitem" tabindex="0">
+          <img src="/img/fotoperfil.jfif" alt="Estudiante Diego Fredy Cucho Rivera" />
+          <blockquote>
+            "Cambiar mis hábitos alimenticios mejoró mi rendimiento académico y mi energía durante el día."
+          </blockquote>
+          <cite>Diego Fredy Cucho Rivera</cite>
+        </article>
+        <article class="story-card" role="listitem" tabindex="0">
+          <img src="img/fotoperfil2.jfif" alt="Estudiante Joel ES.PA" />
+          <blockquote>
+            "Aprendí que comer saludable puede ser delicioso y divertido."
+          </blockquote>
+          <cite>Joel ES.PA</cite>
+        </article>
+        <article class="story-card" role="listitem" tabindex="0">
+          <img src="img/fotoperfil3.jfif" alt="Estudiante Anonimo" />
+          <blockquote>
+            "Ahora preparo mis propias meriendas saludables y me siento mejor."
+          </blockquote>
+          <cite>Anonimo</cite>
+        </article>
+        <article class="story-card" role="listitem" tabindex="0">
+          <img src="img/fotoperfil4.jfif" alt="Estudiante Anonimo" />
+          <blockquote>
+            "Planificar mis comidas me ayudó a evitar antojos y tener más control sobre lo que como."
+          </blockquote>
+          <cite>Anonimo</cite>
+        </article>
+        <article class="story-card" role="listitem" tabindex="0">
+          <img src="img/fotoperfil5.jfif" alt="Estudiante Anonimo" />
+          <blockquote>
+            "Gracias a un desayuno balanceado, ya no llego cansado a media mañana."
+          </blockquote>
+          <cite>Anonimo</cite>
+        </article>
+      </div>
+      <div class="slider-controls">
+        <button class="prev-story" aria-label="Historia anterior">←</button>
+        <button class="next-story" aria-label="Historia siguiente">→</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-content">
+      <section class="footer-section" aria-label="Información de NutriEduca">
+        <h3>NutriEduca</h3>
+        <p>I.E. Nuestra Señora del Rosario</p>
+      </section>
+      <section class="footer-section" aria-label="Enlaces de navegación">
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#recetas">Recetas</a></li>
+          <li><a href="#comparacion">Comparación</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+        </ul>
+      </section>
+      <section class="footer-section" aria-label="Información de contacto">
+        <h3>Contacto</h3>
+        <p>Email: nutrieduca@gmail.com</p>
+        <p>Teléfono: 924606154</p>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 NutriEduca - I.E. Nuestra Señora del Rosario</p>
+    </div>
+  </footer>
+
+  <!-- Modal container for recipes and videos -->
+  <div id="modalContainer" aria-hidden="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
