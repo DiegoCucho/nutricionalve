@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Nutritional Team Support</title>
+  <title>NutriEduca - I.E. Nuestra Señora del Rosario</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-content">
       <a href="#inicio" class="logo">
-        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=50" alt="NutriEduca logo" class="logo-img" />
-        Nutritional Team Support
+        <img src="/img/Fondonutri.jpg" alt="NutriEduca logo" class="logo-img" />
+        NutriEduca
       </a>
       <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-navigation">
         <span></span>
@@ -20,10 +20,9 @@
       </button>
       <ul class="nav-links" id="primary-navigation">
         <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#comparacion">Comparación</a></li>
         <li><a href="#recetas">Recetas</a></li>
+        <li><a href="#comparacion">Comparación</a></li>
         <li><a href="#recursos">Recursos</a></li>
-        <li><a href="#comentarios">Comentarios</a></li>
         <li><a href="#historias">Historias</a></li>
       </ul>
     </div>
@@ -31,9 +30,8 @@
 
   <header id="inicio" class="hero" role="banner">
     <div class="hero-content">
-      <h1>¿Cómo fortalecer la educación alimentaria?</h1>
-      <p>¿Sabías que más del 60% de estudiantes consume comida rápida al menos tres veces por semana?
-      En la I.E. Nuestra Señora del Rosario estamos promoviendo la reeducación de los hábitos alimenticios mediante talleres y actividades que impulsan una alimentación saludable.</p>
+      <h1>Fortalecer la educación alimentaria</h1>
+      <p>Reeducando los hábitos de consumo de comida rápida en los estudiantes de la I.E. Nuestra Señora del Rosario</p>
       <div class="hero-buttons">
         <a href="#recetas" class="btn btn-primary">Ver recetas saludables</a>
         <a href="#recursos" class="btn btn-secondary">Recursos educativos</a>
@@ -42,6 +40,7 @@
   </header>
 
   <main>
+    
     <section id="comparacion" class="comparison-section" aria-labelledby="comparacion-heading">
       <h2 id="comparacion-heading">Comparación Nutricional</h2>
       <div class="comparison-grid">
@@ -81,149 +80,231 @@
         </div>
       </div>
     </section>
+    <section id="juego-arrastrar" class="drag-drop-game">
+  <h2>¡Arma tu Plato Saludable!</h2>
+
+  <div class="ingredientes">
+    <!-- Saludables -->
+    <div class="item" draggable="true" data-puntos="10">🥦 Brócoli</div>
+    <div class="item" draggable="true" data-puntos="10">🍗 Pollo</div>
+    <div class="item" draggable="true" data-puntos="10">🍚 Arroz Integral</div>
+    <div class="item" draggable="true" data-puntos="10">🥑 Palta</div>
+    <div class="item" draggable="true" data-puntos="10">🥕 Zanahoria</div>
+    <div class="item" draggable="true" data-puntos="10">🍅 Tomate</div>
+    <div class="item" draggable="true" data-puntos="10">🥬 Espinaca</div>
+    <div class="item" draggable="true" data-puntos="10">🍎 Manzana</div>
+    <div class="item" draggable="true" data-puntos="10">🍌 Plátano</div>
+    <div class="item" draggable="true" data-puntos="10">🥚 Huevo</div>
+    <div class="item" draggable="true" data-puntos="10">🐟 Pescado</div>
+    <div class="item" draggable="true" data-puntos="10">🍊 Naranja</div>
+
+    <!-- No saludables -->
+    <div class="item" draggable="true" data-puntos="0">🍩 Donut</div>
+    <div class="item" draggable="true" data-puntos="0">🥤 Gaseosa</div>
+    <div class="item" draggable="true" data-puntos="0">🍟 Papas Fritas</div>
+    <div class="item" draggable="true" data-puntos="0">🍔 Hamburguesa</div>
+    <div class="item" draggable="true" data-puntos="0">🍕 Pizza</div>
+    <div class="item" draggable="true" data-puntos="0">🍰 Torta</div>
+    <div class="item" draggable="true" data-puntos="0">🍫 Chocolate</div>
+    <div class="item" draggable="true" data-puntos="0">🍪 Galletas</div>
+    <div class="item" draggable="true" data-puntos="0">🧁 Cupcake</div>
+  </div>
+
+  <div class="plato" id="zona-plato">
+    <p>Arrastra aquí tus ingredientes</p>
+    <ul id="lista-ingredientes"></ul>
+  </div>
+
+  <div class="acciones">
+    <button id="btnCombinar">🍽️ Combinar</button>
+  </div>
+
+  <div class="puntaje">
+    <strong>Puntaje Total:</strong> <span id="puntaje">0</span>
+  </div>
+</section>
+
     <section id="recetas" class="recipes-section" aria-labelledby="recetas-heading">
-      <h2 id="recetas-heading">Recetas Saludables</h2>
-      <div class="recipe-grid">
-        <!-- Recipe cards -->
-        <article class="recipe-card" tabindex="0">
-          <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Wrap de Pollo y Vegetales" />
-          <div class="recipe-content">
-            <h3>Wrap de Pollo y Vegetales</h3>
-            <p>Una alternativa saludable a los wraps de comida rápida.</p>
-            <span class="time" aria-label="Tiempo de preparación">20 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <article class="recipe-card" tabindex="0">
-          <img src="https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Pizza Integral Casera" />
-          <div class="recipe-content">
-            <h3>Pizza Integral Casera</h3>
-            <p>Pizza saludable con masa integral y vegetales frescos.</p>
-            <span class="time" aria-label="Tiempo de preparación">45 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <article class="recipe-card" tabindex="0">
-          <img src="/img/letejas.jpg" alt="Hamburguesa de Lentejas" />
-          <div class="recipe-content">
-            <h3>Hamburguesa de Lentejas</h3>
-            <p>Deliciosa hamburguesa vegetariana rica en proteínas.</p>
-            <span class="time" aria-label="Tiempo de preparación">30 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <!-- Aquí van las 10 recetas adicionales -->
-        <article class="recipe-card" tabindex="0">
-          <img src="/img/Ensalada de Quinoa y Tomate.jpeg" alt="Ensalada de Quinoa y Tomate" />
-          <div class="recipe-content">
-            <h3>Ensalada de Quinoa y Tomate</h3>
-            <p>Fresca y nutritiva para cualquier comida.</p>
-            <span class="time" aria-label="Tiempo de preparación">15 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <article class="recipe-card" tabindex="0">
-          <img src="/img/Pollo a la Plancha con Verduras.jpg" alt="Pollo a la Plancha con Verduras" />
-          <div class="recipe-content">
-            <h3>Pollo a la Plancha con Verduras</h3>
-            <p>Plato bajo en calorías y alto en proteínas.</p>
-            <span class="time" aria-label="Tiempo de preparación">25 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <article class="recipe-card" tabindex="0">
-          <img src="/img/smoothie-verde-energizante.webp" alt="Smoothie Verde Energético" />
-          <div class="recipe-content">
-            <h3>Smoothie Verde Energético</h3>
-            <p>Bebida refrescante rica en antioxidantes.</p>
-            <span class="time" aria-label="Tiempo de preparación">10 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <article class="recipe-card" tabindex="0">
-          <img src="/img/Granola Casera Saludable.jpg" alt="Granola Casera Saludable" />
-          <div class="recipe-content">
-            <h3>Granola Casera Saludable</h3>
-            <p>Perfecta para un desayuno nutritivo y crujiente.</p>
-            <span class="time" aria-label="Tiempo de preparación">35 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <article class="recipe-card" tabindex="0">
-          <img src="/img/Omelette de Espinacas y Queso Fresco.jpg" alt="Omelette de Espinacas y Queso Fresco" />
-          <div class="recipe-content">
-            <h3>Omelette de Espinacas y Queso Fresco</h3>
-            <p>Ideal para comenzar el día con energía.</p>
-            <span class="time" aria-label="Tiempo de preparación">10 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <article class="recipe-card" tabindex="0">
-          <img src="/img/Batido de Frutas y Avena.jpg" alt="Batido de Frutas y Avena" />
-          <div class="recipe-content">
-            <h3>Batido de Frutas y Avena</h3>
-            <p>Ideal para una merienda saludable y saciante.</p>
-            <span class="time" aria-label="Tiempo de preparación">8 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <article class="recipe-card" tabindex="0">
-          <img src="/img/Bowl de Acai y Frutas.jpg" alt="Bowl de Acai y Frutas" />
-          <div class="recipe-content">
-            <h3>Bowl de Acai y Frutas</h3>
-            <p>Dulce y refrescante lleno de antioxidantes.</p>
-            <span class="time" aria-label="Tiempo de preparación">12 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <article class="recipe-card" tabindex="0">
-          <img src="/img/Ensalada de Lentejas.jpg" alt="Ensalada de Lentejas" />
-          <div class="recipe-content">
-            <h3>Ensalada de Lentejas</h3>
-            <p>Una fuente excelente de proteína vegetal.</p>
-            <span class="time" aria-label="Tiempo de preparación">20 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
-        <article class="recipe-card" tabindex="0">
-          <img src="/img/Rollitos de Berenjena.jpg" />
-          <div class="recipe-content">
-            <h3>Rollitos de Berenjena</h3>
-            <p>Aperitivo saludable y delicioso al horno.</p>
-            <span class="time" aria-label="Tiempo de preparación">30 min</span>
-            <button class="btn-recipe" type="button">Ver receta</button>
-          </div>
-        </article>
+  <h2 id="recetas-heading">Recetas Saludables</h2>
+  <div class="recipe-grid">
+    <!-- Recetas desbloqueadas por defecto -->
+    <article class="recipe-card" data-recipe-id="wrap-de-pollo-y-vegetales" tabindex="0">
+      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Wrap de Pollo y Vegetales" />
+      <div class="recipe-content">
+        <h3>Wrap de Pollo y Vegetales</h3>
+        <p>Una alternativa saludable a los wraps de comida rápida.</p>
+        <span class="time">20 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
       </div>
-    </section>
-    
+    </article>
+
+    <article class="recipe-card" data-recipe-id="pizza-integral-casera" tabindex="0">
+      <img src="https://images.pexels.com/photos/905847/pexels-photo-905847.jpeg" alt="Pizza Integral Casera" />
+      <div class="recipe-content">
+        <h3>Pizza Integral Casera</h3>
+        <p>Pizza saludable con masa integral y vegetales frescos.</p>
+        <span class="time">45 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+
+    <!-- Recetas bloqueadas -->
+    <article class="recipe-card hidden" data-recipe-id="hamburguesa-de-lentejas" tabindex="0">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div>Desbloquear por 50 puntos</div>
+        <button class="unlock-btn" data-recipe-id="hamburguesa-de-lentejas">Desbloquear</button>
+      </div>
+      <img src="/img/letejas.jpg" alt="Hamburguesa de Lentejas" />
+      <div class="recipe-content">
+        <h3>Hamburguesa de Lentejas</h3>
+        <p>Deliciosa hamburguesa vegetariana rica en proteínas.</p>
+        <span class="time">30 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+
+    <article class="recipe-card hidden" data-recipe-id="ensalada-quinoa-tomate" tabindex="0">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div>Desbloquear por 50 puntos</div>
+        <button class="unlock-btn" data-recipe-id="ensalada-quinoa-tomate">Desbloquear</button>
+      </div>
+      <img src="/img/Ensalada de Quinoa y Tomate.jpeg" alt="Ensalada de Quinoa y Tomate" />
+      <div class="recipe-content">
+        <h3>Ensalada de Quinoa y Tomate</h3>
+        <p>Fresca y nutritiva para cualquier comida.</p>
+        <span class="time">15 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+
+    <article class="recipe-card hidden" data-recipe-id="pollo-plancha-verduras" tabindex="0">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div>Desbloquear por 50 puntos</div>
+        <button class="unlock-btn" data-recipe-id="pollo-plancha-verduras">Desbloquear</button>
+      </div>
+      <img src="/img/Pollo a la Plancha con Verduras.jpg" alt="Pollo a la Plancha con Verduras" />
+      <div class="recipe-content">
+        <h3>Pollo a la Plancha con Verduras</h3>
+        <p>Plato bajo en calorías y alto en proteínas.</p>
+        <span class="time">25 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+
+    <article class="recipe-card hidden" data-recipe-id="smoothie-verde-energetico" tabindex="0">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div>Desbloquear por 50 puntos</div>
+        <button class="unlock-btn" data-recipe-id="smoothie-verde-energetico">Desbloquear</button>
+      </div>
+      <img src="/img/smoothie-verde-energizante.webp" alt="Smoothie Verde Energético" />
+      <div class="recipe-content">
+        <h3>Smoothie Verde Energético</h3>
+        <p>Bebida refrescante rica en antioxidantes.</p>
+        <span class="time">10 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+
+    <article class="recipe-card hidden" data-recipe-id="granola-casera-saludable" tabindex="0">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div>Desbloquear por 50 puntos</div>
+        <button class="unlock-btn" data-recipe-id="granola-casera-saludable">Desbloquear</button>
+      </div>
+      <img src="/img/Granola Casera Saludable.jpg" alt="Granola Casera Saludable" />
+      <div class="recipe-content">
+        <h3>Granola Casera Saludable</h3>
+        <p>Perfecta para un desayuno nutritivo y crujiente.</p>
+        <span class="time">35 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+
+    <article class="recipe-card hidden" data-recipe-id="omelette-espinacas-queso" tabindex="0">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div>Desbloquear por 50 puntos</div>
+        <button class="unlock-btn" data-recipe-id="omelette-espinacas-queso">Desbloquear</button>
+      </div>
+      <img src="/img/Omelette de Espinacas y Queso Fresco.jpg" alt="Omelette de Espinacas y Queso Fresco" />
+      <div class="recipe-content">
+        <h3>Omelette de Espinacas y Queso Fresco</h3>
+        <p>Ideal para comenzar el día con energía.</p>
+        <span class="time">10 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+
+    <article class="recipe-card hidden" data-recipe-id="batido-frutas-avena" tabindex="0">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div>Desbloquear por 50 puntos</div>
+        <button class="unlock-btn" data-recipe-id="batido-frutas-avena">Desbloquear</button>
+      </div>
+      <img src="/img/Batido de Frutas y Avena.jpg" alt="Batido de Frutas y Avena" />
+      <div class="recipe-content">
+        <h3>Batido de Frutas y Avena</h3>
+        <p>Ideal para una merienda saludable y saciante.</p>
+        <span class="time">8 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+
+    <article class="recipe-card hidden" data-recipe-id="bowl-acai-frutas" tabindex="0">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div>Desbloquear por 50 puntos</div>
+        <button class="unlock-btn" data-recipe-id="bowl-acai-frutas">Desbloquear</button>
+      </div>
+      <img src="/img/Bowl de Acai y Frutas.jpg" alt="Bowl de Acai y Frutas" />
+      <div class="recipe-content">
+        <h3>Bowl de Acai y Frutas</h3>
+        <p>Dulce y refrescante lleno de antioxidantes.</p>
+        <span class="time">12 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+
+    <article class="recipe-card hidden" data-recipe-id="ensalada-lentejas" tabindex="0">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div>Desbloquear por 50 puntos</div>
+        <button class="unlock-btn" data-recipe-id="ensalada-lentejas">Desbloquear</button>
+      </div>
+      <img src="/img/Ensalada de Lentejas.jpg" alt="Ensalada de Lentejas" />
+      <div class="recipe-content">
+        <h3>Ensalada de Lentejas</h3>
+        <p>Una fuente excelente de proteína vegetal.</p>
+        <span class="time">20 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+
+    <article class="recipe-card hidden" data-recipe-id="rollitos-de-berenjena" tabindex="0">
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div>Desbloquear por 50 puntos</div>
+        <button class="unlock-btn" data-recipe-id="rollitos-de-berenjena">Desbloquear</button>
+      </div>
+      <img src="/img/Rollitos de Berenjena.jpg" alt="Rollitos de Berenjena" />
+      <div class="recipe-content">
+        <h3>Rollitos de Berenjena</h3>
+        <p>Aperitivo saludable y delicioso al horno.</p>
+        <span class="time">30 min</span>
+        <button class="btn-recipe" type="button">Ver receta</button>
+      </div>
+    </article>
+  </div>
+</section>    
   </main>
 
-    
 
-    <section id="recursos" class="resources-section" aria-labelledby="recursos-heading">
-      <h2 id="recursos-heading">Recursos Educativos</h2>
-      <div class="resources-grid">
-        <div class="resource-card" role="region" aria-label="Guía de Nutrición">
-          <div class="icon" aria-hidden="true">📚</div>
-          <h3>Guía de Nutrición</h3>
-          <p>Aprende los fundamentos de una alimentación saludable.</p>
-          <a href="#" class="btn-download" role="button">Descargar PDF</a>
-        </div>
-        <div class="resource-card" role="region" aria-label="Infografías">
-          <div class="icon" aria-hidden="true">📊</div>
-          <h3>Infografías</h3>
-          <p>Información nutricional en formato visual.</p>
-          <a href="#" class="btn-download" role="button">Ver infografías</a>
-        </div>
-        <div class="resource-card" role="region" aria-label="Videos Educativos">
-          <div class="icon" aria-hidden="true">🎥</div>
-          <h3>Videos Educativos</h3>
-          <p>Tutoriales y consejos en formato video.</p>
-          <a href="#" class="btn-download" role="button" id="openVideoBtn">Ver videos</a>
-        </div>
-      </div>
-    </section>
+
+
     <section id="comentarios" class="comments-section" aria-labelledby="comentarios-heading">
       <h2 id="comentarios-heading">Calificaciones y Comentarios</h2>
       <form id="commentForm" aria-describedby="comentarios-desc" novalidate>
