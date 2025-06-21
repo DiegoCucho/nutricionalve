@@ -592,5 +592,153 @@ if (commentForm) {
     }, 3000);
   });
 }
+// Variables globales
+let puntajeTotal = parseInt(localStorage.getItem("nutrieduca-puntaje")) || 0;
+let recetasDesbloqueadas = JSON.parse(localStorage.getItem("nutrieduca-recetas")) || [];
+let ingredientesSeleccionados = [];
+
+// Elementos del DOM
+const items = document.querySelectorAll(".item");
+const zonaPlato = document.getElementById("zona-plato");
+const lista = document.getElementById("lista-ingredientes");
+const btnCombinar = document.getElementById("btnCombinar");
+const puntajeSpan = document.getElementById("puntaje");
+
+// Función para actualizar el puntaje mostrado
+function actualizarPuntaje() {
+  puntajeSpan.textContent = puntajeTotal;
+  localStorage.setItem("nutrieduca-puntaje", puntajeTotal);
+}
+
+// Mostrar recetas desbloqueadas al cargar
+function mostrarRecetasDesbloqueadas() {
+  recetasDesbloqueadas.forEach(id => {
+    const receta = document.querySelector(`.recipe-card[data-recipe-id="${id}"]`);
+    if (receta) {
+      receta.classList.remove("hidden");
+      const overlay = receta.querySelector(".lock-overlay");
+      if (overlay) overlay.remove();
+    }
+  });
+}
+
+// Función para desbloquear recetas (CORREGIDA)
+function desbloquearReceta(recipeId) {
+  if (puntajeTotal < 50) {
+    return alert("Necesitas al menos 50 puntos para desbloquear esta receta.");
+  }
+
+  if (!recetasDesbloqueadas.includes(recipeId)) {
+    recetasDesbloqueadas.push(recipeId);
+    localStorage.setItem("nutrieduca-recetas", JSON.stringify(recetasDesbloqueadas));
+  }
+
+  puntajeTotal -= 50;
+  actualizarPuntaje();
+
+  // Corregido: quitar visualmente el bloqueo al instante
+  const receta = document.querySelector(`.recipe-card[data-recipe-id="${recipeId}"]`);
+  if (receta) {
+    receta.classList.remove("hidden");
+    const overlay = receta.querySelector(".lock-overlay");
+    if (overlay) overlay.remove();
+  }
+
+  alert(`Receta desbloqueada: ${recipeId}`);
+}
+
+// Drag & Drop
+items.forEach(item => {
+  item.addEventListener("dragstart", e => {
+    e.dataTransfer.setData("nombre", item.textContent);
+    e.dataTransfer.setData("puntos", item.dataset.puntos);
+    e.dataTransfer.setData("id", item.textContent + Math.random());
+  });
+});
+
+zonaPlato.addEventListener("dragover", e => {
+  e.preventDefault();
+  zonaPlato.classList.add("over");
+});
+
+zonaPlato.addEventListener("dragleave", () => {
+  zonaPlato.classList.remove("over");
+});
+
+zonaPlato.addEventListener("drop", e => {
+  e.preventDefault();
+  zonaPlato.classList.remove("over");
+
+  const nombre = e.dataTransfer.getData("nombre");
+  const puntos = parseInt(e.dataTransfer.getData("puntos"));
+
+  ingredientesSeleccionados.push({ nombre, puntos });
+
+  const li = document.createElement("li");
+  li.textContent = nombre;
+  lista.appendChild(li);
+
+  const item = [...items].find(i => i.textContent === nombre);
+  if (item) {
+    item.setAttribute("draggable", "false");
+    item.style.opacity = "0.5";
+    item.style.cursor = "not-allowed";
+  }
+});
+
+// Cargar sonidos
+const sonidoBien = new Audio("sonidos/positivo.mp3");
+const sonidoMal = new Audio("sonidos/negativo.mp3");
+
+// Botón de combinar ingredientes
+btnCombinar.addEventListener("click", () => {
+  if (ingredientesSeleccionados.length === 0) {
+    alert("¡Agrega ingredientes primero!");
+    return;
+  }
+
+  const hayNoSaludable = ingredientesSeleccionados.some(i => i.puntos === 0);
+
+  if (hayNoSaludable) {
+    sonidoMal.play();
+    alert("😞 ¡Plato no saludable! Pierdes los puntos.");
+  } else {
+    const suma = ingredientesSeleccionados.reduce((acc, i) => acc + i.puntos, 0);
+    puntajeTotal += suma;
+    actualizarPuntaje();
+    sonidoBien.play();
+    alert("🎉 ¡Plato saludable! Ganaste " + suma + " puntos.");
+  }
+
+  ingredientesSeleccionados = [];
+  lista.innerHTML = "";
+  items.forEach(i => {
+    i.setAttribute("draggable", "true");
+    i.style.opacity = "1";
+    i.style.cursor = "grab";
+  });
+});
+
+// Eventos para desbloqueo y apertura de recetas
+document.addEventListener("click", (e) => {
+  if (e.target.matches(".unlock-btn")) {
+    const rid = e.target.dataset.recipeId;
+    desbloquearReceta(rid);
+  }
+
+  if (e.target.matches(".btn-recipe")) {
+    const card = e.target.closest(".recipe-card");
+    if (card && card.classList.contains("hidden")) {
+      return alert("Esta receta aún está bloqueada. Desbloquéala primero.");
+    }
+    const rid = card.dataset.recipeId;
+    showRecipeModal(rid); // Asegúrate que esta función esté definida
+  }
+});
+
+// Inicialización
+actualizarPuntaje();
+mostrarRecetasDesbloqueadas();
+
 
 
