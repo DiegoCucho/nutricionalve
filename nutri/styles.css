@@ -98,10 +98,10 @@
   .hero {
     min-height: 100vh;
     background: linear-gradient(
-        rgba(255 255 255 / 0.85),
-        rgba(255 255 255 / 0.85)
+        rgba(255 255 255 / 0.50),
+        rgba(255 255 255 / 0.50)
       ),
-      url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+      url('/img/Fondonutri.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1094,6 +1094,87 @@ body {
   height: 32px;
   object-fit: contain;
 }
+.drag-drop-game {
+  padding: 20px;
+  text-align: center;
+}
+
+.ingredientes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.item {
+  padding: 10px 15px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  cursor: grab;
+  font-size: 18px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  user-select: none;
+}
+
+.plato {
+  border: 2px dashed #4caf50;
+  padding: 40px;
+  border-radius: 10px;
+  min-height: 120px;
+  background: #f9fff9;
+  transition: background 0.3s ease;
+}
+
+.plato.over {
+  background: #d0ffd0;
+}
+
+.puntaje {
+  margin-top: 20px;
+  font-size: 20px;
+}
+#lista-ingredientes {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.acciones {
+  margin-top: 20px;
+}
+
+button#btnCombinar {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.hidden {
+  position: relative;
+  opacity: 0.5;
+  /* pointer-events: none;  <- Elimínalo o coméntalo */
+}
+
+.lock-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  gap: 10px;
+  z-index: 10;
+  pointer-events: auto; /* ✅ Asegura que se pueda hacer clic en el botón */
+}
+
+
 
 
 
