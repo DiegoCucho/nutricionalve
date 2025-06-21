@@ -1173,6 +1173,13 @@ button#btnCombinar {
   z-index: 10;
   pointer-events: auto; /* ✅ Asegura que se pueda hacer clic en el botón */
 }
+.comparison-image {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
 
 
 
